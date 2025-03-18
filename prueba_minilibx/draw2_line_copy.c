@@ -56,17 +56,17 @@ void drawline(void *mlx_ptr, void *win_ptr, int x0, int y0, int x1, int y1, int 
 
 int	main( void )
 {
-	void	*win;
-	void	*mlx;
+	void	*win_ptr;
+	void	*mlx_ptr;
 
-	mlx = mlx_init();
-	win = mlx_new_window (mlx, 500, 500, "DIBUJA");
-	drawline(mlx, win, 50, 50, 200, 50, 0xFFFFFF);
+	mlx_ptr = mlx_init();
+	win_ptr = mlx_new_window (mlx_ptr, 500, 500, "DIBUJA");
+	drawline(mlx_ptr, win_ptr, 50, 50, 200, 50, 0xFFFFFF);
 
 	// Dibujar líneas de prueba
-	drawline(mlx, win, 60, 60, 200, 60, 0xFF0000);  // Línea horizontal (rojo)
-	drawline(mlx, win, 100, 100, 100, 300, 0x00FF00); // Línea vertical (verde)
-	drawline(mlx, win, 50, 100, 300, 100, 0xFFF000); // Línea rojo
-	mlx_loop(mlx);
+	drawline(mlx_ptr, win_ptr, 60, 60, 200, 60, 0xFF0000);  // Línea horizontal (rojo)
+	drawline(mlx_ptr, win_ptr, 100, 100, 100, 300, 0x00FF00); // Línea vertical (verde)
+	drawline(mlx_ptr, win_ptr, 50, 100, 300, 100, 0xFFF000); // Línea rojo
+	mlx_loop(mlx_ptr);
 	return (0);
 }
